@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin_wheel</title>
+    <style>
+        *{margin:0;padding:0}body{background:#570103;background-repeat:no-repeat;background-size:cover;height:100;display:flex}.box{height:100vh;overflow:clip;padding:10px;display:flex;align-items:center;flex-direction:column}.title{width:76%}.tag{width:80%}.wheel{position:relative;display:flex;justify-content:center;align-items:center;margin-top:10px}.wheel_img{width:95%;min-width:330px;min-height:330px;height:auto;}.spin_button{position:absolute;width:25%;height:25%;border-radius:50%;filter:drop-shadow(0 0 4px rgb(255 255 255 / .4));text-shadow:0 0 4px rgb(0 0 0 / .4);top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:24px;font-weight:800;color:#fff;cursor:pointer;font-size:18px}.spin_button img{height:100%}.hand{position:absolute;top:60%;left:55%;transform:translate(-50%,-50%) rotate(-30deg);width:60px;animation:hand 1s ease-in-out infinite forwards;z-index:1}@keyframes hand{0%,100%{top:60%;left:55%}50%{top:65%;left:65%}}.auto-rotate{animation:auto-rotate 60s linear infinite;transform:transition 60s linear;transform:rotate(360deg)}@keyframes auto-rotate{from{transform:rotate(0deg)}to{transform:rotate(3600deg)}}.pointer{position:absolute;top:0;left:50%;transform:translateX(-50%) rotate(-180deg);width:0;height:0;border-left:20px solid #fff0;border-right:20px solid #fff0;border-bottom:50px solid #febd48;border-radius:25px;filter:drop-shadow(1px -5px 1px rgba(0,0,.5,.5))}.pointer-toggle{animation:pointer 0.1s linear infinite alternate}@keyframes pointer{0%{transform:translateX(-50%) rotate(-180deg)}100%{transform:translateX(-50%) rotate(-220deg)}}.pointer .dot{position:absolute;top:30px;left:-5px;width:10px;height:10px;border-radius:50%;background-color:#fff;border:1px solid #d9d9d9}.made{width:50%;margin-top:10px}.sentence{width:100%;margin:20px;color:#fff;font-weight:600}.icon img{width:15%;margin-right:10px}.retry_popup{display:none;align-items:center;justify-content:center;flex-direction:column;position:absolute;top:0;left:0;width:100vw;height:100vh;background:rgb(0 0 0 / .7);z-index:1}.retry img{width:100%;height:104%;background-size:contain}.retry{background-color:#fff;border-radius:20px;padding:20px 0;margin:0 40px;border:10px solid #fabc52}.shake-horizontal{-webkit-animation:shake-horizontal 4s cubic-bezier(.455,.03,.515,.955) infinite both;animation:shake-horizontal 4s cubic-bezier(.455,.03,.515,.955) infinite both}@-webkit-keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@-webkit-keyframes wobble-hor-top{0%,100%{-webkit-transform:translateX(0%);transform:translateX(0%);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateX(-30px) rotate(6deg);transform:translateX(-30px) rotate(6deg)}30%{-webkit-transform:translateX(15px) rotate(-6deg);transform:translateX(15px) rotate(-6deg)}45%{-webkit-transform:translateX(-15px) rotate(3.6deg);transform:translateX(-15px) rotate(3.6deg)}60%{-webkit-transform:translateX(9px) rotate(-2.4deg);transform:translateX(9px) rotate(-2.4deg)}75%{-webkit-transform:translateX(-6px) rotate(1.2deg);transform:translateX(-6px) rotate(1.2deg)}}@keyframes wobble-hor-top{0%,100%{-webkit-transform:translateX(0%);transform:translateX(0%);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateX(-30px) rotate(6deg);transform:translateX(-30px) rotate(6deg)}30%{-webkit-transform:translateX(15px) rotate(-6deg);transform:translateX(15px) rotate(-6deg)}45%{-webkit-transform:translateX(-15px) rotate(3.6deg);transform:translateX(-15px) rotate(3.6deg)}60%{-webkit-transform:translateX(9px) rotate(-2.4deg);transform:translateX(9px) rotate(-2.4deg)}75%{-webkit-transform:translateX(-6px) rotate(1.2deg);transform:translateX(-6px) rotate(1.2deg)}}.close{margin-left:20px}.shake-horizontal{-webkit-animation:shake-horizontal 10s cubic-bezier(.455,.03,.515,.955) infinite both;animation:shake-horizontal 10s cubic-bezier(.455,.03,.515,.955) infinite both}@-webkit-keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}@keyframes shake-horizontal{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%{-webkit-transform:translateX(10px);transform:translateX(10px)}80%{-webkit-transform:translateX(8px);transform:translateX(8px)}90%{-webkit-transform:translateX(-8px);transform:translateX(-8px)}}.retry_icon img{width:120%}.retry_icon{border-radius:50px;border:1px solid #000;justify-content:space-around;width:60%;margin-top:-60px;height:75px;z-index:1;text-align:center;display:flex;align-items:center;justify-content:center;flex-direction:row}.retry_icon p{font-size:30px;font-weight:600;font-style:italic;padding-right:5px}.heartbeat{-webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both}@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}.popup-con{display:flex;align-items:center;justify-content:center;justify-self:center;flex-direction:column;border-radius:8px;background:linear-gradient(to bottom,#fbe4ff 0%,#fff 50%,#fff 100%);color:#000;text-align:center;width:100%}.popup-con .claim-amount{padding:10px 20px;background-image:linear-gradient(180deg,#28a745 0%,#28a745 100%);box-shadow:0 1px 3px rgb(0 0 0 / .25);color:#fff;border-radius:8px;border:0;font-weight:600;font-size:20px;border:1px ridge #fff;text-transform:uppercase;width:60%;z-index:2}.final_popup{position:absolute;display:grid;top:0;left:0;right:0;bottom:0;display:none;justify-self:center;align-items:center;z-index:2;background-color:rgb(0 0 0 / .85);backdrop-filter:blur(10px);padding:20px;flex-direction:column;height:100vh;overflow-y:scroll}.timer-container{display:flex;justify-content:center;align-items:center;gap:15px}.timer-box{padding:1px;background-color:#fffffff3!important;color:#8d67ec;border-radius:10px;text-align:center;min-width:30px;background:rgb(255 255 255 / .801);font-weight:700;border:1px solid rgb(255 255 255 / .568);font-size:14px;margin-top:-20px;margin-bottom:20px}.dots{margin-top:-20px;margin-bottom:20px}.claim-amount{padding:10px 20px;background-image:linear-gradient(180deg,#28a745 0%,#28a745 100%);box-shadow:0 1px 3px rgb(0 0 0 / .25);color:#fff;border-radius:8px;border:0;font-weight:600;font-size:20px;border:1px ridge #fff;text-transform:uppercase;width:60%;z-index:2;margin-top:-20px}.time{text-align:center}.time h2{margin-bottom:10px}.steps{background-color:#fff;color:#000;display:flex;flex-direction:column;margin-top:20px;border-radius:8px;padding-bottom:10px;box-shadow:0 4px 8px rgb(241 241 241 / .74);width:100%}.steps h2{color:#000;padding:10px;font-weight:700;text-align:center;border-radius:8px 8px 0 0;text-decoration:underline;font-size:20px}.steps p{font-size:14px;padding-left:34%}.steps span{font-weight:700;padding-right:10px}.mt-10{margin:10px}.mb-4{margin-top:-50px}.pulsate-bck{-webkit-animation:pulsate-bck 2s ease-in-out infinite both;animation:pulsate-bck 2s ease-in-out infinite both}.p{margin-top:0}@-webkit-keyframes pulsate-bck{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(.9);transform:scale(.9)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulsate-bck{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(.9);transform:scale(.9)}100%{-webkit-transform:scale(1);transform:scale(1)}}canvas{width:90%;margin:0;position:absolute;top:0;z-index:1;overflow-y:hidden;overflow-x:hidden;height:100vh}a{z-index:2;width:100%}.marqee{background:rgb(255 255 255 / .295);box-shadow:0 8px 32px 0 rgb(255 255 255 / .37);font-weight:700;border-radius:12px;border:2px solid rgb(255 255 255 / .459);padding:8px 10px;margin-top:10px;height:75px;overflow:hidden;width:100%}@media (min-width:700px){body{display:none!important}}@media (min-width:380px){.popup-con{margin-top:20%}.marqee{margin-top:10%}.title{margin-top:40px;width:80%}}.loader{--R:100px;--g1:#514b82 96%, #0000;--g2:#ffffff 96%, #0000;width:calc(2*var(--R));aspect-ratio:1;border-radius:50%;display:grid;-webkit-mask:linear-gradient(#000 0 0);animation:l30 2s infinite linear}.loader::before,.loader::after{content:"";grid-area:1/1;width:50%;background:radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R)),radial-gradient(farthest-side,var(--g1)) calc(var(--R) + 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R)),radial-gradient(farthest-side,var(--g2)) calc(var(--R) + 0.5*var(--R) - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),radial-gradient(farthest-side,var(--g1)) 0 calc(-1*var(--R)),radial-gradient(farthest-side,var(--g2)) calc(var(--R) - 0.5*var(--R) - var(--R)) calc(var(--R) - 0.866*var(--R) - var(--R)),radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) - 0.5*var(--R) - var(--R)),radial-gradient(farthest-side,var(--g2)) calc(-1*var(--R)) 0,radial-gradient(farthest-side,var(--g1)) calc(var(--R) - 0.866*var(--R) - var(--R)) calc(var(--R) + 0.5*var(--R) - var(--R));background-size:calc(2*var(--R)) calc(2*var(--R));background-repeat:no-repeat}.loader::after{transform:rotate(180deg);transform-origin:right}@keyframes l30{100%{transform:rotate(-1turn)}}.pre-loader{position:absolute;top:0;left:0;width:100%;height:100%;background-color:#fff;display:flex;justify-content:center;align-items:center;z-index:9999}
+    </style>
+</head>
+
+
+<body class="flex-column">
+    <div class="pre-loader">
+        <div class="loader"></div>
+    </div>
+
+    <audio id="myAudio" src="./assests/spin_audio.mp3" type="audio/mp3"></audio>
+    <audio id="coins_audio" src="./assests/Coins_count.mp3" type="audio/mp3"></audio>
+    <audio id="crowd_cheering" src="./assests/crowd_cheering.mp3" type="audio/mp3"></audio>
+    <audio id="winner_cheer" src="./assests/winner_cheers.mp3" type="audio/mp3"></audio>
+
+    <div id="box" class="box">
+        <img src="./assests/title.webp" alt="" class="title" width="400px" height="400px">
+        <div id="wheel" class="wheel">
+            <img src="./assests/wheel.webp" alt="" class="wheel_img" id="wheel_img" loading="eager" width="400px" height="400px">
+            <div id="spin_button" class="spin_button">
+                <img src="./assests/spin.webp" alt="spin" loading="lazy">
+            </div>
+            <img src="./assests/hand.webp" class="hand" alt="" loading="lazy">
+        </div>
+        <div class="marqee">
+            <p style="text-align: center; color: white;">Winner's List</p>
+            <marquee behavior="smooth" direction="up"
+                style="font-size: 12px; color: white; height: 40px; text-align: center;" scrollamount="2">
+                <p>+91 950** ***** has won Rs.9500/-</p>
+
+                <p>+91 550** ***** has won Rs.3000/-</p>
+
+                <p>+91 300** ***** has won Rs.5500/-</p>
+
+                <p>+91 700** ***** has won Rs.9500/-</p>
+
+                <p>+91 800** ***** has won Rs.3000/-</p>
+
+                <p>+91 550** ***** has won Rs.9500/-</p>
+
+                <p>+91 950** ***** has won Rs.5500/-</p>
+
+                <p>+91 300** ***** has won Rs.9500/-</p>
+
+                <p>+91 700** ***** has won Rs.3000/-</p>
+
+                <p>+91 800** ***** has won Rs.9500/-</p>
+
+                <p>+91 550** ***** has won Rs.5500/-</p>
+
+                <p>+91 950** ***** has won Rs.9500/-</p>
+
+                <p>+91 300** ***** has won Rs.5500/-</p>
+
+                <p>+91 700** ***** has won Rs.3000/-</p>
+
+                <p>+91 800** ***** has won Rs.9500/-</p>
+
+                <p>+91 550** ***** has won Rs.3000/-</p>
+
+                <p>+91 950** ***** has won Rs.9500/-</p>
+
+                <p>+91 300** ***** has won Rs.9500/-</p>
+
+                <p>+91 700** ***** has won Rs.5500/-</p>
+
+                <p>+91 800** ***** has won Rs.9500/-</p>
+
+                <p>+91 550** ***** has won Rs.9500/-</p>
+
+                <p>+91 950** ***** has won Rs.5500/-</p>
+
+                <p>+91 300** ***** has won Rs.9500/-</p>
+
+                <p>+91 700** ***** has won Rs.3000/-</p>
+
+                <p>+91 800** ***** has won Rs.5500/-</p>
+
+                <p>+91 550** ***** has won Rs.9500/-</p>
+
+                <p>+91 950** ***** has won Rs.3000/-</p>
+
+                <p>+91 300** ***** has won Rs.9500/-</p>
+
+                <p>+91 700** ***** has won Rs.5500/-</p>
+
+                <p>+91 800** ***** has won Rs.3000/-</p>
+
+                <p>+91 550** ***** has won Rs.9500/-</p>
+
+                <p>+91 950** ***** has won Rs.5500/-</p>
+
+                <p>+91 300** ***** has won Rs.9500/-</p>
+
+            </marquee>
+        </div>
+    </div>
+
+    <div id="retry_popup" class="retry_popup">
+        <div class="" style="display: flex; align-items: center; justify-content: center;">
+            <img src="./assests/dull.webp" loading="lazy" alt="" style="width: 75%;">
+        </div>
+        <div class="retry_icon heartbeat " id="retry_button">
+            <img src="./assests/retry.webp" alt="">
+        </div>
+    </div>
+
+    <div id="final_popup" class="final_popup">
+        <canvas id="canvas"></canvas>
+        <div class="popup-con ">
+            <div>
+                <img src="./assests/image_3.webp" alt="" width="100%">
+            </div>
+
+            <div class="time">
+                <h2 class="" id="heading" style="color: red; margin-bottom: 20px; font-size: 14px; ">Limited Time
+                    Offer Remaining</h2>
+                <div class="timer-container" id="timer" style="font-size: 16px; font-weight: 600;">
+                    <div id="hours" class="timer-box">00</div>
+                    <div class="dots">:</div>
+                    <div id="minutes" class="timer-box">01</div>
+                    <div class="dots">:</div>
+                    <div id="seconds" class="timer-box">30</div>
+                </div>
+            </div>
+
+            <a href="https://www.google.com" target="_blank"><button class="claim-amount pulsate-bck" type="button"
+                    style="width: 70%;">Withdraw Now</button></a>
+
+            <p class="mt-10" style="font-size: 12px;">Hurry up! Valid for few minutes only.</p>
+        </div>
+
+        <div class="steps">
+            <h2 class="steps-title">Steps To Claim The Offer</h2>
+            <p><span>Step 1</span>Download</p>
+            <p><span>Step 2</span>Install</p>
+            <p><span>Step 3</span>Register</p>
+        </div>
+
+    </div>
+
+    <script>
+        window.onload = function () {
+          const preLoader = document.querySelector(".pre-loader");
+          preLoader.style.transition = "opacity 2s";
+          preLoader.style.opacity = "0";
+          setTimeout(() => {
+              preLoader.style.display = "none";
+          }, 2000);
+      }
+  </script>
+
+
+    <script defer>
+        const spinDuration=4000;const finalPopupDelay=500;let isFirstSpin=!0;const urlParams=new URLSearchParams(window.location.search);let spinParam=urlParams.get('id');console.log('URL parameter (id):',spinParam);document.getElementById('spin_button').addEventListener('click',()=>{console.log('Spin button clicked');const wheel=document.getElementById('wheel_img');const spinAudio=document.getElementById('myAudio');const handElement=document.querySelector('.hand');if(!wheel)console.error('Wheel element not found!');if(!spinAudio)console.error('Spin audio element not found!');spinAudio.play();if(handElement){handElement.style.display='none';console.log('Hand element hidden')}
+wheel.classList.remove('auto-rotate');function startVibration(){if('vibrate' in navigator){console.log('Vibration API supported');navigator.vibrate([200,100,200]);let vibrationInterval=setInterval(()=>{navigator.vibrate([100,50,100]);console.log('Vibration triggered during spin')},500);setTimeout(()=>{clearInterval(vibrationInterval);console.log('Vibration stopped after spin completion')},spinDuration)}else{console.warn('Vibration API not supported on this device')}}
+let degree;if(isFirstSpin){console.log('First spin logic activated');degree=3571;isFirstSpin=!1;wheel.style.transition="transform 4s ease-out";wheel.style.transform=`rotate(${degree}deg)`;startVibration();setTimeout(()=>{console.log('First spin completed: Wheel stopped at bomb angle');document.getElementById('retry_button').addEventListener('click',()=>{console.log('Retry button clicked');const handElement=document.querySelector('.hand');if(handElement){handElement.style.display='block';console.log('Hand element displayed again')}});const box=document.querySelector('.box');if(box)box.style.display='none';const retryPopup=document.getElementById('retry_popup');if(retryPopup)retryPopup.style.display='flex';const coinsAudio=document.getElementById('coins_audio');if(coinsAudio)coinsAudio.play();},spinDuration)}else{console.log('Second spin logic activated');if(spinParam==='5500'){degree=3512}else if(spinParam==='9500'){degree=3632}else if(spinParam==='3500'){degree=3388}else{degree=3512;spinParam='5500'}
+console.log('Degree of rotation:',degree);wheel.style.transition="transform 4s ease-out";wheel.style.transform=`rotate(${degree}deg)`;startVibration();setTimeout(()=>{console.log(`Second spin completed: Wheel stopped at prize ID: ${spinParam}`);setTimeout(()=>{const timer=document.getElementById('timer');const hours=document.getElementById('hours');const minutes=document.getElementById('minutes');const seconds=document.getElementById('seconds');let timeLeft=90;const countdown=setInterval(()=>{if(timeLeft>0){timeLeft--;hours.textContent=Math.floor(timeLeft/3600).toString().padStart(2,'0');minutes.textContent=Math.floor((timeLeft%3600)/60).toString().padStart(2,'0');seconds.textContent=(timeLeft%60).toString().padStart(2,'0')}else{clearInterval(countdown)}},1000);const finalPopup=document.getElementById('final_popup');if(finalPopup){finalPopup.style.display='flex';console.log('Final popup displayed')}
+const winnerCheerAudio=document.getElementById('winner_cheer');if(winnerCheerAudio){winnerCheerAudio.play();console.log('Winner cheer audio played')}},finalPopupDelay)},spinDuration)}});document.getElementById('retry_button').addEventListener('click',()=>{console.log('Retry button clicked');const retryPopup=document.getElementById('retry_popup');if(retryPopup){retryPopup.style.display='none';console.log('Retry popup hidden')}
+const wheel=document.getElementById('wheel_img');if(wheel){wheel.style.transition="none";wheel.style.transform="rotate(0deg)";console.log('Wheel reset for next spin')}
+const box=document.querySelector('.box');if(box){box.style.display='flex';console.log('Spin wheel container displayed')}})
+    </script>
+
+    <script defer>
+        let W=window.innerWidth;let H=window.innerHeight;const canvas=document.getElementById("canvas");const context=canvas.getContext("2d");const maxConfettis=10;const particles=[];const possibleColors=["DodgerBlue","OliveDrab","Gold","Pink","SlateBlue","LightBlue","Gold","Violet","PaleGreen","SteelBlue","SandyBrown","Chocolate","Crimson"];function randomFromTo(from,to){return Math.floor(Math.random()*(to-from+1)+from)}
+function confettiParticle(){this.x=Math.random()*W;this.y=Math.random()*H-H;this.r=randomFromTo(11,33);this.d=Math.random()*maxConfettis+11;this.color=possibleColors[Math.floor(Math.random()*possibleColors.length)];this.tilt=Math.floor(Math.random()*33)-11;this.tiltAngleIncremental=Math.random()*0.07+0.05;this.tiltAngle=0;this.draw=function(){context.beginPath();context.lineWidth=this.r/2;context.strokeStyle=this.color;context.moveTo(this.x+this.tilt+this.r/3,this.y);context.lineTo(this.x+this.tilt,this.y+this.tilt+this.r/5);return context.stroke()}}
+function Draw(){const results=[];requestAnimationFrame(Draw);context.clearRect(0,0,W,window.innerHeight);for(var i=0;i<maxConfettis;i++){results.push(particles[i].draw())}
+let particle={};let remainingFlakes=0;for(var i=0;i<maxConfettis;i++){particle=particles[i];particle.tiltAngle+=particle.tiltAngleIncremental;particle.y+=(Math.cos(particle.d)+3+particle.r/2)/2;particle.tilt=Math.sin(particle.tiltAngle-i/3)*15;if(particle.y<=H)remainingFlakes++;if(particle.x>W+30||particle.x<-30||particle.y>H){particle.x=Math.random()*W;particle.y=-30;particle.tilt=Math.floor(Math.random()*10)-20}}
+return results}
+window.addEventListener("resize",function(){W=window.innerWidth;H=window.innerHeight;canvas.width=window.innerWidth;canvas.height=window.innerHeight},!1);for(var i=0;i<maxConfettis;i++){particles.push(new confettiParticle())}
+canvas.width=W;canvas.height=H;Draw()
+    </script>
+</body>
+</html>
